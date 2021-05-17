@@ -65,6 +65,7 @@ def init_app(app: Flask) -> None:
     app.teardown_appcontext(db.close_db)
 
 
+init_app(app)
+
 if __name__ == '__main__':
-    init_app(app)
     app.run(debug=True)
