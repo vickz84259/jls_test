@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product['internal_title'] }}{% endblock %}
+
+{% block content %}
+<div class="title">
+    <h2>{{ product['internal_title'] }}</h2>
+</div>
+<div class="stats">
+    <div class="single_stat">
+        <p class="category_name">Core Number:</p>
+        <p class="category_value">{{ product['core_number'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Vendor:</p>
+        <p class="category_value">{{ product['vendor'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Vendor's Title:</p>
+        <p class="category_value">
+            {% if product['vendor_title']%}
+                {{ product['vendor_title'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Vendor SKU:</p>
+        <p class="category_value">{{ product['vendor_sku'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Backup Vendor:</p>
+        <p class="category_value">{{ product['backup_vendor'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Backup Vendor SKU:</p>
+        <p class="category_value">{{ product['backup_vendor_sku'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Restockable:</p>
+        <p class="category_value">
+            {% set restockable = product['restockable'] %}
+            {% if restockable == true %}
+                Yes
+            {% elif restockable == false %}
+                No
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Vendor Order Unit:</p>
+        <p class="category_value">
+            {% if product['vendor_order_unit']%}
+                {{ product['vendor_order_unit'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Vendor Case Pack:</p>
+        <p class="category_value">
+            {% if product['vendor_case_pack'] %}
+                {{ product['vendor_case_pack'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">MOQ (Pieces):</p>
+        <p class="category_value">
+            {% if product['moq'] %}
+                {{ product['moq'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Buffer Days:</p>
+        <p class="category_value">{{ product['buffer_days'] }}</p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Minimum Level:</p>
+        <p class="category_value">
+            {% if product['minimum_level']%}
+                {{ product['minimum_level'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Product URL:</p>
+        <p class="category_value">
+            {% if product['product_url'] %}
+                {{ product['product_url'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Note for Next Order:</p>
+        <p class="category_value">
+            {% if product['next_order_note'] %}
+                {{ product['next_order_note'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Case Pack (Pieces):</p>
+        <p class="category_value">
+            {% if product['case_pack'] %}
+                {{ product['case_pack'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Pieces per Internal Box:</p>
+        <p class="category_value">
+            {% if product['pieces_per_internal'] %}
+                {{ product['pieces_per_internal'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Boxes per case:</p>
+        <p class="category_value">
+            {% if product['boxes_per_case'] %}
+                {{ product['boxes_per_case'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Tags & Info:</p>
+        <p class="category_value">
+            {% if product['tags_info'] %}
+                {{ product['tags_info'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Tag 1:</p>
+        <p class="category_value">
+            {% if product['tag_1'] %}
+                {{ product['tag_1'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Tag 2:</p>
+        <p class="category_value">
+            {% if product['tag_2'] %}
+                {{ product['tag_2'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Tag 3:</p>
+        <p class="category_value">
+            {% if product['tag_3'] %}
+                {{ product['tag_3'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Tag 4:</p>
+        <p class="category_value">
+            {% if product['tag_4'] %}
+                {{ product['tag_4'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Hazmat:</p>
+        <p class="category_value">
+            {% set hazmat = product['hazmat'] %}
+            {% if hazmat == true %}
+                Yes
+            {% elif hazmat == false %}
+                No
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Active:</p>
+        <p class="category_value">
+            {% set active = product['active'] %}
+            {% if active == true %}
+                Yes
+            {% elif active == false %}
+                No
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Ignore Until:</p>
+        <p class="category_value">
+            {% if product['ignore_until'] %}
+                {{ product['ignore_until'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+    <div class="single_stat">
+        <p class="category_name">Notes:</p>
+        <p class="category_value">
+            {% if product['notes'] %}
+                {{ product['notes'] }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>
+    </div>
+</div>
+<div class="locationsContainer">
+    <h3>Locations</h3>
+    <div class="locations">
+    {% for row in locations %}
+        <div class="single_location">
+            <p class="warehouse">{{ row['warehouse'] }}: {{ row['location']}}</p>
+            <input type="number" id="{{ row['warehouse'] }}:{{ row['location'] }}"
+            {% if row['quantity'] is string %}
+                value="{{ (row['quantity'])|replace(',', '')|int }}">
+            {% else %}
+                value="{{ row['quantity'] }}">
+            {% endif %}
+            <button type="submit" data-id="{{ row['warehouse'] }}:{{ row['location'] }}"
+                data-product="{{ product['core_number'] }}">Update</button>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+<div class="totalsContainer">
+    <h3>Totals</h3>
+    <div class="totals">
+    {% for name, quantity in totals.items() %}
+        <div class="single_warehouse">
+            <p class="warehouse_name">{{ name }}:</p>
+            <p class="warehouse_value">{{ quantity }}</p>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/js/script.js"></script>
+{% endblock %}

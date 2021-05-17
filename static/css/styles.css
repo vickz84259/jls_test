@@ -45,3 +45,36 @@ body {
 .productDiv a {
   margin-right: 50px;
 }
+
+.stats, .locations, .totals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single_stat, .single_warehouse {
+  display: flex;
+  margin: 2.5px 10px;
+}
+
+.category_value, .warehouse_value {
+  color: blue;
+  margin-left: 5px;
+}
+
+.locationsContainer, .totalsContainer {
+  width: 100%;
+}
+
+.locationsContainer h3, .totalsContainer h3 {
+  text-align: center;
+}
+
+.single_location {
+  display: flex;
+  margin: 2.5px 5px;
+  margin-right: 15px;
+}
+
+.single_location input {
+  margin: 0px 10px;
+}
