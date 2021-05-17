@@ -1,8 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
 
 import db
 
 app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    with db.get_db() as database:
+        products = database.execute(
+            'SELECT core_number, internal_title FROM products')
+
+        return render_template('index.html', products=products)
 
 
 def init_app(app: Flask) -> None:

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+{% endblock %}
+
+{% block content %}
+{% for product in products %}
+<div class="productDiv">
+    <p>{{ product['internal_title']}}</p>
+    <a href="/product/{{ product['core_number'] }}">{{ product['core_number'] }}</a>
+</div>
+{% endfor%}
+{% endblock %}
